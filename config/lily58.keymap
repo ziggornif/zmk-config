@@ -19,6 +19,29 @@
         };
     };
 
+    macros {
+        fullscreen: fullscreen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp LALT &kp F>;
+            label = "FULLSCREEN";
+        };
+
+        lefthalf: lefthalf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp LALT &kp LEFT_ARROW>;
+            label = "LEFTHALF";
+        };
+
+        righthalf: righthalf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI &kp LALT &kp RIGHT>;
+            label = "RIGHTHALF";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,11 +73,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans     &trans    &trans  &trans    &trans      &trans                       &trans     &trans     &trans     &trans    &kp LS(PRINTSCREEN)  &kp PRINTSCREEN
-&kp F1     &kp F2    &kp F3  &kp F4    &kp F5      &kp F6                       &kp F7     &kp F8     &kp F9     &kp F10   &kp F11              &kp F12
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR             &kp TILDE
-&trans     &trans    &trans  &trans    &trans      &trans     &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC             &kp PIPE
-                             &trans    &trans      &trans     &trans    &trans  &trans     &trans     &trans
+&trans     &trans    &trans  &trans    &trans       &trans                       &trans     &trans     &trans     &trans      &kp LS(PRINTSCREEN)  &kp PRINTSCREEN
+&kp F1     &kp F2    &kp F3  &kp F4    &kp F5       &kp F6                       &kp F7     &kp F8     &kp F9     &kp F10     &kp F11              &kp F12
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &fullscreen  &kp PRCNT                    &lefthalf  &kp AMPS   &kp ASTRK  &righthalf  &kp RPAR             &kp TILDE
+&trans     &trans    &trans  &trans    &trans       &trans     &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC    &kp RBRC             &kp PIPE
+                             &trans    &trans       &trans     &trans    &trans  &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
