@@ -23,7 +23,14 @@
         fullscreen: fullscreen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &kp LALT &kp F>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LALT>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LGUI &kp LALT>;
+
             label = "FULLSCREEN";
         };
 
