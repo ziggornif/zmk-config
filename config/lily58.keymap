@@ -37,14 +37,28 @@
         lefthalf: lefthalf {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &kp LALT &kp LEFT_ARROW>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LALT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>,
+                <&kp LGUI &kp LALT>;
+
             label = "LEFTHALF";
         };
 
         righthalf: righthalf {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &kp LALT &kp RIGHT>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LALT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LGUI &kp LALT>;
+
             label = "RIGHTHALF";
         };
     };
