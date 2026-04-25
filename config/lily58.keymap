@@ -90,6 +90,18 @@
             label = "RIGHTSCREEN";
         };
 
+        eraseword: eraseword {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp BACKSPACE>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+
         // à è ù (dead grave = `)
 
         a_grave: a_grave {
@@ -184,11 +196,11 @@
 
         default_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // | SHIFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // |  CTRL |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   |   =   |
-            //                     | ALT  | GUI  | LOWER|  RAISE |  | ENTER | SPACE| BSPC  |  DEL  |
+            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                    |  6   |  7    |  8    |  9   |   0   |   `   |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                    |  Y   |  U    |  I    |  O   |   P   |   -   |
+            // | SHIFT |  A  |  S  |  D   |  F   |  G   |                    |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // |  CTRL |  Z  |  X  |  C   |  V   |  B   |   "["  |  |   "]"  |  N   |  M    |  ,    |  .   |   /   |   =   |
+            //                     | ALT  | GUI  | LOWER|TAB/RAIS|  | SPC/L3 | SPACE| BSPC  |  DEL  |
 
             bindings = <
 &kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                            &kp N6       &kp N7    &kp N8      &kp N9   &kp N0    &kp GRAVE
@@ -204,8 +216,8 @@
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      | S+PSCN| PSCRN |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |FSCRN |  %   |                   |LHALF |LSCRN  |RSCRN  |RHALF |   )   |   ~   |
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |       |       |      |       | BSPC  |
+            // |  F7   |  F8 |  F9 |  F10 |  F11 |  F12 |                   |LHALF |LSCRN  |RSCRN  |RHALF |       | ENTER |
             // |       |     |     |      |      |      |        |  |       |      |  -    |  +    |  {   |   }   |  "|"  |
             //                     |      |      |      |        |  |       |      |       |       |
 
@@ -223,14 +235,14 @@
         raise_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |BRI- |BRI+ | PREV | PLAY | NEXT |                   |      |       |       |      |       |       |
-            // |       |     |     | MUTE | VOL- | VOL+ |                   | HOME | PGDN  | PGUP  | END  |       |       |
-            // | SHIFT |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |       |
+            // |       |     |     | MUTE | VOL- | VOL+ |                   | HOME | PGDN  | PGUP  | END  |       | ERASEW|
+            // | SHIFT |     |     |      | FSCRN|      |                   |  <-  |   v   |   ^   |  ->  |       |       |
             // |       |     |     |      |      |      |        |  |       |      |       |       |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
 &trans          &kp C_BRI_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT                      &trans          &trans          &trans        &trans     &trans    &trans
-&trans          &trans         &trans                &kp K_MUTE  &kp C_VOL_DN      &kp C_VOL_UP                    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &trans    &trans
+&trans          &trans         &trans                &kp K_MUTE  &kp C_VOL_DN      &kp C_VOL_UP                    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &trans    &eraseword
 &kt LEFT_SHIFT  &trans         &trans                &trans      &fullscreen       &trans                          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans    &trans
 &trans          &trans         &trans                &trans      &trans            &trans        &trans    &trans  &trans          &trans          &trans        &kp LBKT   &kp RBKT  &kp BSLH
                                                      &trans      &trans            &trans        &trans    &trans  &trans          &trans          &trans
@@ -242,7 +254,7 @@
         layer_3 {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-            // |       |     |     |      |      |      |                   | BTCLR| BT1   | BT2   | BT3  |       |       |
+            // |       |     |     |      |      |      |                   | BTCLR| BT0   | BT1   | BT2  |       |       |
             // |       |     |     |      |      |      |                   | EP_ON|EP_OFF |EP_TOG |      |       |       |
             // |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
             //                     |      |      |      |        |  |       |      |       |       |
