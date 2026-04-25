@@ -127,7 +127,7 @@
         e_acute: e_acute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(APOS) &kp E>;
+            bindings = <&kp APOS &kp E>;
         };
 
         // â ê î ô û (dead circumflex = Shift+6)
@@ -187,7 +187,7 @@
         c_ced: c_ced {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(COMMA)>;
+            bindings = <&kp APOS &kp C>;
         };
     };
 
