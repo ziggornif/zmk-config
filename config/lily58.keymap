@@ -89,6 +89,30 @@
 
             label = "RIGHTSCREEN";
         };
+
+        // à è ù (dead grave = `)
+        a_grave: a_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp A>; };
+        e_grave: e_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp E>; };
+        u_grave: u_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp U>; };
+
+        // é (dead acute = Shift+')
+        e_acute: e_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp E>; };
+
+        // â ê î ô û (dead circumflex = Shift+6)
+        a_circ: a_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp A>; };
+        e_circ: e_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp E>; };
+        i_circ: i_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp I>; };
+        o_circ: o_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp O>; };
+        u_circ: u_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp U>; };
+
+        // ë ï ü ÿ (dead diaeresis = Shift+')  ← attention même dead key que acute sur certains layouts
+        e_uml: e_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp E>; };
+        i_uml: i_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp I>; };
+        u_uml: u_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp U>; };
+
+        // ç (direct en US Intl = Alt+,)
+        c_ced: c_ced  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LA(COMMA)>; };
+
     };
 
     keymap {
