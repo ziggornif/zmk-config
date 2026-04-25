@@ -91,28 +91,92 @@
         };
 
         // à è ù (dead grave = `)
-        a_grave: a_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp A>; };
-        e_grave: e_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp E>; };
-        u_grave: u_grave { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp GRAVE>, <&kp U>; };
+
+        a_grave: a_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp A>;
+        };
+
+        e_grave: e_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp E>;
+        };
+
+        u_grave: u_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp U>;
+        };
 
         // é (dead acute = Shift+')
-        e_acute: e_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp E>; };
+
+        e_acute: e_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp E>;
+        };
 
         // â ê î ô û (dead circumflex = Shift+6)
-        a_circ: a_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp A>; };
-        e_circ: e_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp E>; };
-        i_circ: i_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp I>; };
-        o_circ: o_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp O>; };
-        u_circ: u_circ { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(N6)>, <&kp U>; };
+
+        a_circ: a_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N6) &kp A>;
+        };
+
+        e_circ: e_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N6) &kp E>;
+        };
+
+        i_circ: i_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N6) &kp I>;
+        };
+
+        o_circ: o_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N6) &kp O>;
+        };
+
+        u_circ: u_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N6) &kp U>;
+        };
 
         // ë ï ü ÿ (dead diaeresis = Shift+')  ← attention même dead key que acute sur certains layouts
-        e_uml: e_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp E>; };
-        i_uml: i_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp I>; };
-        u_uml: u_uml  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(APOS)>, <&kp U>; };
+
+        e_uml: e_uml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp E>;
+        };
+
+        i_uml: i_uml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp I>;
+        };
+
+        u_uml: u_uml {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp U>;
+        };
 
         // ç (direct en US Intl = Alt+,)
-        c_ced: c_ced  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LA(COMMA)>; };
 
+        c_ced: c_ced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(COMMA)>;
+        };
     };
 
     keymap {
@@ -127,11 +191,11 @@
             //                     | ALT  | GUI  | LOWER|  RAISE |  | ENTER | SPACE| BSPC  |  DEL  |
 
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                            &kp N6     &kp N7    &kp N8      &kp N9   &kp N0    &kp GRAVE
-&kp TAB           &kp Q   &kp W   &kp E     &kp R     &kp T                             &kp Y      &kp U     &kp I       &kp O    &kp P     &kp MINUS
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F     &kp G                             &kp H      &kp J     &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT     &kp N      &kp M     &kp COMMA   &kp DOT  &kp FSLH  &kp EQUAL
-                                  &kp LALT  &kp LGUI  &mo 1   &lt 2 TAB    &lt 3 SPACE  &kp SPACE  &kp BSPC  &kp DELETE
+&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                            &kp N6       &kp N7    &kp N8      &kp N9   &kp N0    &kp GRAVE
+&kp TAB           &kp Q   &kp W   &kp E     &kp R     &kp T                             &kp Y        &kp U     &kp I       &kp O    &kp P     &kp MINUS
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F     &kp G                             &kp H        &kp J     &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT     &kp N        &kp M     &kp COMMA   &kp DOT  &kp FSLH  &kp EQUAL
+                                  &kp LALT  &kp LGUI  &mo 1   &lt 2 TAB    &lt 3 SPACE  &lt 4 SPACE  &kp BSPC  &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -183,6 +247,16 @@
             // |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
             //                     |      |      |      |        |  |       |      |       |       |
 
+            bindings = <
+&trans  &trans    &trans  &trans    &trans   &trans                     &trans   &trans    &trans   &trans   &trans  &trans
+&trans  &trans    &trans  &e_acute  &trans   &trans                     &trans   &u_grave  &i_circ  &o_circ  &trans  &trans
+&trans  &a_grave  &trans  &trans    &trans   &trans                     &trans   &u_uml    &i_uml   &e_uml   &trans  &trans
+&trans  &trans    &trans  &c_ced    &a_circ  &e_circ  &trans    &trans  &u_circ  &e_grave  &trans   &trans   &trans  &trans
+                          &trans    &trans   &trans   &trans    &trans  &trans   &trans    &trans
+            >;
+        };
+
+        layer_4 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans            &trans             &trans             &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &bt BT_CLR        &bt BT_SEL 0       &bt BT_SEL 1       &bt BT_SEL 2  &trans  &trans
