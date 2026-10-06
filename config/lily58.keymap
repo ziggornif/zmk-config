@@ -253,11 +253,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans    &trans  &trans    &trans   &trans                     &trans   &trans    &trans   &trans   &trans  &trans
-&trans  &trans    &trans  &e_acute  &trans   &trans                     &trans   &u_grave  &i_circ  &o_circ  &trans  &trans
-&trans  &a_grave  &trans  &trans    &trans   &trans                     &trans   &u_uml    &i_uml   &e_uml   &trans  &trans
-&trans  &trans    &trans  &c_ced    &a_circ  &e_circ  &trans    &trans  &u_circ  &e_grave  &trans   &trans   &trans  &trans
-                          &trans    &trans   &trans   &trans    &trans  &trans   &trans    &trans
+&trans  &trans    &trans          &trans           &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp HOME  &kp UP_ARROW    &kp END          &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans          &trans           &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans           &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
 
