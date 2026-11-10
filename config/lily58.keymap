@@ -83,6 +83,20 @@
             label = "RIGHTSCREEN";
         };
 
+        printzone: printzone {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI &kp LSHIFT>,
+                <&macro_tap>,
+                <&kp N4>,
+                <&macro_release>,
+                <&kp LGUI &kp LSHIFT>;
+
+            label = "PRINTZONE";
+        }
+
         eraseword: eraseword {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -215,7 +229,7 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans  &trans  &trans   &trans   &trans                     &trans     &trans       &trans        &trans      &kp LS(PRINTSCREEN)  &kp PRINTSCREEN
+&trans  &trans  &trans  &trans   &trans   &trans                     &trans     &trans       &trans        &trans      &kp LS(PRINTSCREEN)  &printzone
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans     &trans       &trans        &trans      &kp LEFT_BRACKET     &kp RIGHT_BRACKET
 &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12                    &lefthalf  &leftscreen  &rightscreen  &righthalf  &kp LEFT_BRACE       &kp RIGHT_BRACE
 &trans  &trans  &trans  &trans   &trans   &trans   &trans    &trans  &trans     &trans       &trans        &trans      &kp BSLH             &kp PIPE
