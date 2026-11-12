@@ -95,7 +95,7 @@
                 <&kp LGUI &kp LSHIFT>;
 
             label = "PRINTZONE";
-        }
+        };
 
         eraseword: eraseword {
             compatible = "zmk,behavior-macro";
